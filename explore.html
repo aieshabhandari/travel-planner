@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Travel Planner</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+          <link rel="stylesheet" href="style.css">
+</head>
+<body>
+       <header class="header">
+
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                <i class="fa-solid fa-plane"></i>
+                Travelly
+            </a>
+
+          <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="planner.html">Planner</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <a href="planner.html" class="nav-btn">
+                Plan a Trip
+            </a>
+
+        </nav>
+
+    </header>
+
+    <section class="explore-hero">
+        <div class="explore-content">
+            <span>
+                DISCOVER THE WORLD
+            </span>
+            <h1 class="hidden zoomOut"> 
+                Explore Beautiful Places
+            </h1>
+            <p>
+                Discover beaujtiful destinations, exciting adventures and unforgettable experiences
+                for your next trip.
+            </p>
+              <div class="explore-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchDestination" placeholder="Search destination...">
+            </div>
+        </div>
+    </section>
+
+    <section class="explore-section">
+        <div class="section-heading">
+            <span>EXPLORE DESTINATIONS</span>
+
+            <h2>Find Your Next Adventure</h2>
+            <p> From peaceful lakes to breathtaking mountains,
+                explore some of the most beautiful places.
+             </p>
+        </div>
+
+        <div class="filter-buttons">
+             <button type="button" class="filter-btn active" data-category="all">All</button>
+    <button type="button" class="filter-btn" data-category="mountain">Mountains</button>
+    <button type="button" class="filter-btn" data-category="city">Cities</button>
+    <button type="button" class="filter-btn" data-category="nature">Nature</button>
+        </div>
+
+         <div class="explore-grid">
+
+
+            <div class="explore-card hidden popUp"
+                 data-category="nature adventure"
+                 data-name="pokhara">
+
+                <div class="explore-image">
+
+                    <img src="images/pokhara.jpg" alt="Pokhara">
+
+                    <button class="favorite"
+                            onclick="toggleFavorite(this, 'pokhara')">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </button>
+
+                    <span class="destination-tag">
+                        Nature
+                    </span>
+
+                </div>
+
+                <div class="explore-content">
+
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Pokhara, Nepal
+                    </div>
+
+                    <h3>Pokhara</h3>
+
+                    <p>
+                        Explore peaceful lakes, beautiful mountains,
+                        and exciting adventure activities.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            3-5 Days
+                        </span>
+
+                        <a href="index.html#planner">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+             <div class="explore-card hidden popUp"
+                 data-category="city"
+                 data-name="kathmandu">
+
+                <div class="explore-image">
+
+                    <img src="images/kathmandu.jpg" alt="Kathmandu">
+
+                    <button class="favorite"
+                            onclick="toggleFavorite(this, 'kathmandu')">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </button>
+
+                    <span class="destination-tag">
+                        City
+                    </span>
+
+                </div>
+
+                <div class="explore-content">
+
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Kathmandu, Nepal
+                    </div>
+
+                    <h3>Kathmandu</h3>
+
+                    <p>
+                        Discover ancient temples, local culture,
+                        historic sites, and vibrant city life.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            2-4 Days
+                        </span>
+
+                        <a href="index.html#planner">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+             <div class="explore-card hidden popUp"
+                 data-category="nature adventure"
+                 data-name="chitwan">
+
+                <div class="explore-image">
+
+                    <img src="images/chitwan.jpg" alt="Chitwan">
+
+                    <button class="favorite"
+                            onclick="toggleFavorite(this, 'chitwan')">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </button>
+
+                    <span class="destination-tag">
+                        Adventure
+                    </span>
+
+                </div>
+
+                <div class="explore-content">
+
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Chitwan, Nepal
+                    </div>
+
+                    <h3>Chitwan</h3>
+
+                    <p>
+                        Experience jungle safaris, wildlife,
+                        nature walks, and peaceful surroundings.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            2-3 Days
+                        </span>
+
+                        <a href="index.html#planner">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="explore-card hidden popUp"
+                 data-category="mountain adventure"
+                 data-name="everest">
+
+                <div class="explore-image">
+
+                    <img src="images/everest.jpg" alt="Mount Everest">
+
+                    <button class="favorite"
+                            onclick="toggleFavorite(this, 'everest')">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </button>
+
+                    <span class="destination-tag">
+                        Mountain
+                    </span>
+
+                </div>
+
+                <div class="explore-content">
+
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Everest, Nepal
+                    </div>
+
+                    <h3>Mount Everest</h3>
+
+                    <p>
+                        Take on an unforgettable Himalayan adventure
+                        with breathtaking mountain views.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            7-14 Days
+                        </span>
+
+                        <a href="index.html#planner">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+             <div class="explore-card hidden popUp"
+                 data-category="city nature"
+                 data-name="lumbini">
+
+                <div class="explore-image">
+
+                    <img src="images/lumbini.jpg" alt="Lumbini">
+
+                    <button class="favorite"
+                            onclick="toggleFavorite(this, 'lumbini')">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </button>
+
+                    <span class="destination-tag">
+                        Culture
+                    </span>
+
+                </div>
+
+                <div class="explore-content">
+
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Lumbini, Nepal
+                    </div>
+
+                    <h3>Lumbini</h3>
+
+                    <p>
+                        Visit peaceful monasteries, beautiful gardens,
+                        and one of Nepal's most important cultural sites.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            1-2 Days
+                        </span>
+
+                        <a href="index.html#planner">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+          
+
+    <section class="explore-cta hidden popUp">
+
+        <div class="cta-content">
+
+            <h2>Ready for Your Next Adventure?</h2>
+
+            <p>
+                Start planning your perfect trip today.
+            </p>
+
+            <a href="planner.html" class="cta-btn">
+                Plan My Trip
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+         </div>
+
+    </section>
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <a href="#" class="logo">
+                <i class="fa-solid fa-plane"></i>
+                Travelly
+            </a>
+
+            <p>
+                Plan less. Explore more.
+            </p>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Travelly. All Rights Reserved.
+        </div>
+
+    </footer>
+    <script>
+const hiddenElements = document.querySelectorAll(".hidden");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show");
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+hiddenElements.forEach((element) => {
+    observer.observe(element);
+});
+</script>
+<script>
+    function toggleFavorite(button, destination) {
+    const icon = button.querySelector("i");
+
+    button.classList.toggle("active");
+
+    if (button.classList.contains("active")) {
+        icon.classList.remove("fa-regular");
+        icon.classList.add("fa-solid");
+
+        localStorage.setItem(destination, "true");
+    } else {
+        icon.classList.remove("fa-solid");
+        icon.classList.add("fa-regular");
+
+        localStorage.removeItem(destination);
+    }
+}
+</script>
+<script>
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", function () {
+        const category = this.dataset.category;
+        alert(category);
+    });
+});
+</script>
+
+    </body>
+    </html>

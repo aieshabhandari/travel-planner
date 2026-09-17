@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Travel Planner</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+          <link rel="stylesheet" href="style.css">
+</head>
+<body>
+       <header class="header">
+
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                <i class="fa-solid fa-plane"></i>
+                Travelly
+            </a>
+
+             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="planner.html">Planner</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <a href="planner.html" class="nav-btn">
+                Plan a Trip
+            </a>
+
+        </nav>
+
+    </header>
+    <section class="planner-hero">
+        <div class="planner-hero-content">
+            <p class="hidden slideUp">PLAN YOUR JOURNEY</p>
+            <h1 class="hidden zoomOut">Create Your Perfect Trip</h1>
+            <span>Tell us about your trip and we'll help you 
+                plan an unforgettable adventure.</span>
+        </div>
+    </section>
+    <section class="planner-page">
+        <div class="planner-title hidden slideUp">
+            <p>TRIP PLANNER</p>
+            <h2>Plan Your Journey</h2>
+            <span>
+                Fill inthe details below to create your trip plan.
+            </span>
+        </div>
+
+        <form class="planner-form" id="plannerForm">
+            <div class="form-group">
+                
+                <label for="destination">
+                    <i class="fa-solid fa-location-dot"></i>
+                Destination
+                </label>
+
+                <select id="destination" required>
+                    <option value="">
+                        Select Destination
+                    </option>
+
+                    <option value="Pokhara">
+                        Pokhara
+                    </option>
+
+                    <option value="Kathmandu">
+                        Kathmandu
+                    </option>
+
+                    <option value="Chitwan">
+                        Chitwan
+                    </option>
+
+                    <option value="Everest">
+                        Everest
+                    </option>
+
+                    <option value="Lumbini">
+                        Lumbini
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="start-date">
+                    <i class="fa-regular fa-calender"></i>
+                    Start Date
+                </label>
+
+                <input type="date" id="start-date" required>
+
+            </div>
+
+            <div class="form-group">
+                <label for="end-date">
+                    <i class="fa-regular fa-calender"></i>
+                    End Date
+                </label>
+
+                <input type="date" id="end-date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="travelers">
+                    <i class="fa-solid fa-users"> </i>
+                        Travelers
+                   </label>
+
+                   <select id="travelers">
+                    <option>1 Traveler</option>
+                    <option>2 Travelers</option>
+                    <option>3 Travelers</option>
+                    <option>4 Travelers</option>
+                    <option>5+ Travelers</option>
+                   </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">
+                    <i class="fa-solid fa-wallet"></i>
+                    Budget
+                </label>
+                
+                <select id="budget">
+                    <option value="">
+                        Select Budget
+                    </option>
+
+                    <option>
+                        Under NPR 10,000
+                    </option>
+
+                    <option>
+                        NPR 10,000 - NPR 25,000
+                    </option>
+
+                    <option>
+                        NPR 25,000 - NPR 50,000
+                    </option>
+
+                    <option>
+                        Above NPR 50,000
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group full">
+                <label>
+                    <i class="fa-solid fa-person-hiking"></i>
+                    What do you want to do on your trip?
+                </label>
+
+                <div class="activities">
+                    <label class="activity">
+                        <input type="checkbox" name="activity" value="Trekking">
+                        <span>Trekking</span>
+                    </label>
+
+                    <label class="activity">
+                        <input type="checkbox" name="activity" value="Adventure">
+                        <span>Adventure</span>
+                    </label>
+
+                      <label class="activity">
+                        <input type="checkbox" name="activity" value="Nature">
+                        <span>Nature</span>
+                    </label>
+
+                      <label class="activity">
+                        <input type="checkbox" name="activity" value="Culture">
+                        <span>Culture</span>
+                    </label>
+
+                      <label class="activity">
+                        <input type="checkbox" name="activity" value="Food">
+                        <span>Food</span>
+                    </label>
+
+                      <label class="activity">
+                        <input type="checkbox" name="activity" value="Relaxation">
+                        <span>Relaxation</span>
+                    </label>
+                </div>
+            </div>
+
+             <button
+                type="submit"
+                class="create-btn">
+
+                Create My Trip
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+             </form>
+
+            <div class="trip-result">
+                 <div class="section-title">
+
+                <p>YOUR TRIP PLAN</p>
+
+                <h2>Trip Summary</h2>
+
+            </div>
+
+               <div class="trip-details">
+
+
+                <div class="trip-detail">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+                        <span>Destination</span>
+
+                        <strong id="resultDestination">
+                            -
+                        </strong>
+
+                    </div>
+            </div>
+
+
+                <div class="trip-detail">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <div>
+                         <span>Travel Dates</span>
+
+                        <strong id="resultDates">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                  <div class="trip-detail">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <div>
+
+                        <span>Travelers</span>
+
+                        <strong id="resultTravelers">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+                  <div class="trip-detail">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <div>
+
+                        <span>Budget</span>
+
+                        <strong id="resultBudget">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                </div>
+                <div class="selected-activities">
+
+                <h3>
+
+                    <i class="fa-solid fa-person-hiking"></i>
+
+                    Your Activities
+
+                </h3>
+
+                <div id="resultActivities"></div>
+
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button
+                    class="save-trip"
+                    id="saveTrip">
+
+                    <i class="fa-regular fa-bookmark"></i>
+
+                    Save Trip
+
+                </button>
+
+
+                <button
+                    class="reset-trip"
+                    id="resetTrip">
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    Plan Again
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+     <footer class="footer">
+
+        <div class="footer-content">
+
+            <a href="#" class="logo">
+                <i class="fa-solid fa-plane"></i>
+                Travelly
+            </a>
+
+            <p>
+                Plan less. Explore more.
+            </p>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Travelly. All Rights Reserved.
+        </div>
+
+    </footer>
+       </footer>
+     <script>
+const hiddenElements = document.querySelectorAll(".hidden");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show");
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+hiddenElements.forEach((element) => {
+    observer.observe(element);
+});
+</script>
+ <script>const plannerForm = document.getElementById("plannerForm");
+
+if (plannerForm) {
+
+    plannerForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const destination =
+            document.getElementById("destination").value;
+
+        const startDate =
+            document.getElementById("start-date").value;
+
+        const endDate =
+            document.getElementById("end-date").value;
+
+        const travelers =
+            document.getElementById("travelers").value;
+
+        const budget =
+            document.getElementById("budget").value;
+
+
+        if (!destination || !startDate || !endDate) {
+
+            alert("Please select destination and travel dates.");
+
+            return;
+
+        }
+
+
+        if (new Date(endDate) < new Date(startDate)) {
+
+            alert("End date must be after start date.");
+
+            return;
+
+        }
+
+
+        const activities =
+            document.querySelectorAll(
+                'input[name="activity"]:checked'
+            );
+
+
+        document.getElementById("resultDestination")
+            .textContent = destination;
+
+
+        document.getElementById("resultDates")
+            .textContent =
+            startDate + " - " + endDate;
+
+
+        document.getElementById("resultTravelers")
+            .textContent = travelers;
+
+
+        document.getElementById("resultBudget")
+            .textContent = budget;
+
+
+        const resultActivities =
+            document.getElementById("resultActivities");
+
+
+        resultActivities.innerHTML = "";
+
+
+        if (activities.length === 0) {
+
+            resultActivities.innerHTML =
+                '<span class="result-activity">No activities selected</span>';
+
+        } else {
+
+            activities.forEach(function(activity) {
+
+                const span =
+                    document.createElement("span");
+
+                span.className = "result-activity";
+
+                span.textContent = activity.value;
+
+                resultActivities.appendChild(span);
+
+            });
+
+        }
+
+
+        document.getElementById("tripResult")
+            .classList.add("show");
+
+
+        document.getElementById("tripResult")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    });
+
+    document.getElementById("resetTrip")
+        .addEventListener("click", function() {
+
+            plannerForm.reset();
+
+            document.getElementById("tripResult")
+                .classList.remove("show");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+
+    document.getElementById("saveTrip")
+        .addEventListener("click", function() {
+
+            const trip = {
+
+                destination:
+                    document.getElementById("destination").value,
+
+                startDate:
+                    document.getElementById("start-date").value,
+
+                endDate:
+                    document.getElementById("end-date").value,
+
+                travelers:
+                    document.getElementById("travelers").value,
+
+                budget:
+                    document.getElementById("budget").value
+
+            };
+
+
+            localStorage.setItem(
+                "myTrip",
+                JSON.stringify(trip)
+            );
+
+
+            alert("Your trip has been saved!");
+
+        });
+
+}
+</script>
+</body>
+
+</html>

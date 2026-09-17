@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Travel Planner</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+          
+
+          <link rel="stylesheet" href="style.css">
+</head>
+<body>
+       <header class="header">
+
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                <i class="fa-solid fa-plane"></i>
+                Travelly
+            </a>
+
+          <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="planner.html">Planner</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <a href="planner.html" class="nav-btn">
+                Plan a Trip
+            </a>
+
+        </nav>
+
+    </header>
+
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <p class="hidden zoomIn">ABOUT TRAVELLY</p>
+            <h1 class="hidden zoomOut">Your Journey Starts Here</h1>
+            <span>
+                Discover, plan and experience unforgettable journeys with Travelly.
+            </span>
+        </div>
+    </section>
+
+    <section class="about-intro section">
+       <div class="about-image hidden slideLeft">
+        <img src="images/abouts.jpg" alt="Travelly">
+       </div>
+
+        <div class="abouts-text hidden slideRight   ">
+            <p class="section-label">
+                ABOUT TRAVELLY
+            </p>
+
+            <h2>
+                Making Travel Planning Simple
+            </h2>
+
+            <p>
+                Travelly helps you discover amazing destinations and organize your perfect
+                trip in one place.
+            </p>
+
+            <p>
+                From choosing destinations to planning your daily activities and estimating
+                your budget, everything is designed to make travel planning simple and enjoyable.
+            </p>
+        </div>
+    </section>
+
+    <section class="why-travelly section">
+        <div class="about-title hidden slideUp">
+            <p>WHY TRAVELLY</p>
+            <h2>Everything You Need</h2>
+            <span>
+                Plan your journey with simple and useful travel tools.
+            </span>
+        </div>
+
+        <div class="why-container">
+
+            <div class="why-card hidden popUp">
+                <i class="fa-solid fa-compass"></i>
+                <h3>Discover</h3>
+                <p>
+                    Explore beautiful destinations and find place you would love to visit.
+                </p>
+            </div>
+
+             <div class="why-card hidden popUp">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>Plan</h3>
+                <p>
+                   Create a trip based on your destination, dates, budget
+                    and interests.
+                </p>
+            </div>
+
+            <div class="why-card hidden popUp">
+                <i class="fa-regular fa-heart"></i>
+                <h3>Save</h3>
+                <p>
+                   Save your favorite destinations
+                    and keep them for your future trips.
+                </p>
+            </div>
+
+            <div class="why-card hidden popUp">
+                <i class="fa-regular fa-heart"></i>
+                <h3>Travel</h3>
+                <p>
+                   Organize your journey and enjoy
+                    a better travel experience.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mission">
+        <div class="mission-content">
+            <p class="hidden slideUp">OUR MISSION</p>
+            <h2 class="hidden zoomOut"> Making Every Journey Meaningful</h2>
+            <span>
+                  Our mission is to make travel planning
+                simple, organized and enjoyable while
+                helping travelers discover amazing
+                destinations.
+            </span>
+        </div>
+    </section>
+
+
+    <section class="about-cta section">
+        <div>
+             <p class="hidden slideUp">START YOUR ADVENTURE</p>
+
+            <h2 class="hidden zoomIn">Ready to Plan Your Trip?</h2>
+
+            <span>
+                Discover your next destination and
+                start creating your journey.
+            </span>
+
+              <div class="cta-buttons hidden popUp">
+
+                <a href="explore.html">
+                    Explore Destinations
+                </a>
+
+                <a href="planner.html">
+                    Plan Your Trip
+                </a>
+
+            </div>
+        </div>
+    </section>
+      <footer class="footer">
+
+        <div class="footer-content">
+
+            <a href="#" class="logo">
+                <i class="fa-solid fa-plane"></i>
+                Travelly
+            </a>
+
+            <p>
+                Plan less. Explore more.
+            </p>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Travelly. All Rights Reserved.
+        </div>
+
+    </footer>
+     <script>
+const hiddenElements = document.querySelectorAll(".hidden");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show");
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+hiddenElements.forEach((element) => {
+    observer.observe(element);
+});
+</script>
+<script>
+    function toggleFavorite(button, destination) {
+    const icon = button.querySelector("i");
+
+    button.classList.toggle("active");
+
+    if (button.classList.contains("active")) {
+        icon.classList.remove("fa-regular");
+        icon.classList.add("fa-solid");
+
+        localStorage.setItem(destination, "true");
+    } else {
+        icon.classList.remove("fa-solid");
+        icon.classList.add("fa-regular");
+
+        localStorage.removeItem(destination);
+    }
+}
+</script>
+    </body>
+    </html>
